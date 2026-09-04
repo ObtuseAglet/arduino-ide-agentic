@@ -1,7 +1,7 @@
 {
   "name": "arduino-ide-extension",
   "version": "2.3.9",
-  "description": "An extension for Theia building the Arduino IDE",
+  "description": "The Theia extension powering Octo Agent — an agentic fork of the Arduino IDE. Not affiliated with or endorsed by Arduino.",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "prepare": "yarn download-cli && yarn download-fwuploader && yarn download-ls && yarn copy-i18n && yarn download-examples",
@@ -177,11 +177,7 @@
       "version": "2.4.1"
     },
     "arduino-language-server": {
-      "version": {
-        "owner": "arduino",
-        "repo": "arduino-language-server",
-        "commitish": "05ec308"
-      }
+      "version": "0.7.7"
     },
     "clangd": {
       "version": "14.0.0"

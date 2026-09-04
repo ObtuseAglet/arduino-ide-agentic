@@ -104,6 +104,15 @@ export namespace ArduinoMenus {
     '2_ports',
   ];
 
+  // -- Claude
+  // Top-level menu for the Claude Code agentic integration. Sits between
+  // `Tools` (`4_tools`) and `Help` so it reads as a first-class IDE feature.
+  export const CLAUDE = [...MAIN_MENU_BAR, '5_claude'];
+  // `Open Claude Code`, `New Session`
+  export const CLAUDE__MAIN_GROUP = [...CLAUDE, '0_main'];
+  // `Add Arduino context`, settings
+  export const CLAUDE__CONTEXT_GROUP = [...CLAUDE, '1_context'];
+
   // -- Help
   // `Getting Started`, `Environment`, `Troubleshooting`, etc.
   export const HELP__MAIN_GROUP = [...CommonMenus.HELP, '0_main'];

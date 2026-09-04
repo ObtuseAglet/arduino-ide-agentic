@@ -1,5 +1,5 @@
 import { promises as fs } from 'node:fs';
-import { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
 import yaml from 'js-yaml';
 import { injectable, inject, named } from '@theia/core/shared/inversify';
 import URI from '@theia/core/lib/common/uri';
@@ -28,6 +28,14 @@ import {
 } from './cli-protocol/cc/arduino/cli/commands/v1/settings_pb';
 
 const deepmerge = require('deepmerge');
+
+// Espressif's official package index. Octo Agent seeds this on a fresh install
+// so the ESP32 family (plus S2/S3/C3/C6/H2) shows up in Boards Manager out of
+// the box, instead of making people dig the URL out of some forum thread.
+// Seeded once, never re-applied — so if a user deletes it in Settings, it stays gone.
+const DEFAULT_ADDITIONAL_URLS: readonly string[] = [
+  'https://espressif.github.io/arduino-esp32/package_esp32_index.json',
+];
 
 @injectable()
 export class ConfigServiceImpl
@@ -233,6 +241,34 @@ export class ConfigServiceImpl
   private async initCliConfigTo(fsPathToDir: string): Promise<void> {
     const cliPath = this.daemon.getExecPath();
     await spawnCommand(cliPath, ['config', 'init', '--dest-dir', fsPathToDir]);
+    await this.seedDefaultAdditionalUrls(cliPath, join(fsPathToDir, CLI_CONFIG));
+  }
+
+  // Runs exactly once, on the freshly minted config file. Writes straight to
+  // the yaml via the CLI (no daemon needed yet at this point in startup).
+  private async seedDefaultAdditionalUrls(
+    cliPath: string,
+    cliConfigPath: string
+  ): Promise<void> {
+    if (!DEFAULT_ADDITIONAL_URLS.length) {
+      return;
+    }
+    try {
+      await spawnCommand(cliPath, [
+        'config',
+        'add',
+        'board_manager.additional_urls',
+        ...DEFAULT_ADDITIONAL_URLS,
+        '--config-file',
+        cliConfigPath,
+      ]);
+    } catch (err) {
+      // A boards URL isn't worth bricking first-run config over. Note it and carry on.
+      this.logger.warn(
+        `Could not seed default Boards Manager URLs into ${cliConfigPath}`,
+        err
+      );
+    }
   }
 
   private async mapCliConfigToAppConfig(

@@ -59,7 +59,7 @@
     "target": "electron",
     "frontend": {
       "config": {
-        "applicationName": "Arduino IDE",
+        "applicationName": "Octo Agent",
         "defaultTheme": {
           "light": "arduino-theme",
           "dark": "arduino-theme-dark"
@@ -103,10 +103,10 @@
     }
   },
   "author": "Arduino SA",
-  "description": "Arduino IDE",
+  "description": "Octo Agent — an agentic fork of the Arduino IDE. Not affiliated with or endorsed by Arduino.",
   "build": {
-    "appId": "cc.arduino.IDE2",
-    "productName": "Arduino IDE",
+    "appId": "dev.octoagent.OctoAgent",
+    "productName": "Octo Agent",
     "asar": false,
     "detectUpdateChannel": false,
     "generateUpdatesFilesForAllChannels": true,

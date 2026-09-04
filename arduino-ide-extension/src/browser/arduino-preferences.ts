@@ -315,6 +315,47 @@ const properties: ArduinoPreferenceSchemaProperties = {
     ),
     default: defaultMonitorWidgetDockPanel,
   },
+  'arduino.claudeCode.executablePath': {
+    type: 'string',
+    markdownDescription: nls.localize(
+      'arduino/preferences/claudeCode/executablePath',
+      "Absolute path to the `claude` CLI executable. Leave empty to resolve `claude` from your system `PATH`. **A restart of the IDE is needed** if the CLI wasn't detected on startup."
+    ),
+    default: '',
+  },
+  'arduino.claudeCode.model': {
+    type: 'string',
+    markdownDescription: nls.localize(
+      'arduino/preferences/claudeCode/model',
+      "Model alias passed to Claude Code via `--model` (e.g. `sonnet`, `opus`, or a full model ID). Leave empty to use the CLI's own default."
+    ),
+    default: '',
+  },
+  'arduino.claudeCode.additionalArgs': {
+    type: 'array',
+    items: { type: 'string' },
+    markdownDescription: nls.localize(
+      'arduino/preferences/claudeCode/additionalArgs',
+      'Extra command line arguments appended verbatim when launching the Claude Code CLI.'
+    ),
+    default: [],
+  },
+  'arduino.claudeCode.injectArduinoContext': {
+    type: 'boolean',
+    description: nls.localize(
+      'arduino/preferences/claudeCode/injectArduinoContext',
+      'Expose the active sketch path, selected board FQBN, and port to the Claude Code session as environment variables. Enabled by default.'
+    ),
+    default: true,
+  },
+  'arduino.claudeCode.autoSeedClaudeMd': {
+    type: 'boolean',
+    markdownDescription: nls.localize(
+      'arduino/preferences/claudeCode/autoSeedClaudeMd',
+      'When launching Claude Code, drop a `CLAUDE.md` primer into the sketch folder (if absent) describing the Arduino project so the agent starts with context. Disabled by default.'
+    ),
+    default: false,
+  },
 };
 export const ArduinoConfigSchema: PreferenceSchema = {
   type: 'object',
@@ -351,6 +392,11 @@ export interface ArduinoConfiguration {
   'arduino.sketch.inoBlueprint': string;
   'arduino.checkForUpdates': boolean;
   'arduino.monitor.dockPanel': MonitorWidgetDockPanel;
+  'arduino.claudeCode.executablePath': string;
+  'arduino.claudeCode.model': string;
+  'arduino.claudeCode.additionalArgs': string[];
+  'arduino.claudeCode.injectArduinoContext': boolean;
+  'arduino.claudeCode.autoSeedClaudeMd': boolean;
 }
 
 export const ArduinoPreferences = Symbol('ArduinoPreferences');

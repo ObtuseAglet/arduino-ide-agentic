@@ -45,7 +45,7 @@ export class About extends Contribution {
     const detail = (showAll: boolean) =>
       nls.localize(
         'arduino/about/detail',
-        'Version: {0}\nDate: {1}{2}\nCLI Version: {3}\n\n{4}',
+        'Version: {0}\nDate: {1}{2}\nCLI Version: {3}\n\n{4}\n\n{5}',
         appVersion,
         buildDate ? buildDate : nls.localize('', 'dev build'),
         buildDate && showAll ? ` (${this.ago(buildDate)})` : '',
@@ -54,6 +54,10 @@ export class About extends Contribution {
           'arduino/about/copyright',
           'Copyright © {0} Arduino s.r.l. and/or its affiliated companies',
           new Date().getFullYear().toString()
+        ),
+        nls.localize(
+          'arduino/about/forkNotice',
+          'Octo Agent is an independent fork of the Arduino IDE, licensed under the GNU AGPL v3.0. It is not affiliated with, sponsored by, or endorsed by Arduino s.r.l. "Arduino" is a trademark of Arduino s.r.l.'
         )
       );
     const ok = nls.localize('vscode/issueMainService/ok', 'OK');

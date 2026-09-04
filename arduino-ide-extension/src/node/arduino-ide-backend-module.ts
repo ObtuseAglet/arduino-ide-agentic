@@ -103,6 +103,8 @@ import WebSocketProviderImpl from './web-socket/web-socket-provider-impl';
 import { WebSocketProvider } from './web-socket/web-socket-provider';
 import { ClangFormatter } from './clang-formatter';
 import { FormatterPath } from '../common/protocol/formatter';
+import { ClaudeCodeServiceImpl } from './claude-code-service-impl';
+import { ClaudeCodeServicePath } from '../common/protocol/claude-code-service';
 import { HostedPluginLocalizationService } from './theia/plugin-ext/hosted-plugin-localization-service';
 import { HostedPluginLocalizationService as TheiaHostedPluginLocalizationService } from '@theia/plugin-ext/lib/hosted/node/hosted-plugin-localization-service';
 import { IsTempSketch } from './is-temp-sketch';
@@ -149,6 +151,18 @@ export default new ContainerModule((bind, unbind, isBound, rebind) => {
       (context) =>
         new JsonRpcConnectionHandler(ArduinoDaemonPath, () =>
           context.container.get(ArduinoDaemon)
+        )
+    )
+    .inSingletonScope();
+
+  // Shared Claude Code CLI probe. Detection is stateless, so a single instance
+  // serves every connected frontend (same deal as the formatter below).
+  bind(ClaudeCodeServiceImpl).toSelf().inSingletonScope();
+  bind(ConnectionHandler)
+    .toDynamicValue(
+      ({ container }) =>
+        new JsonRpcConnectionHandler(ClaudeCodeServicePath, () =>
+          container.get(ClaudeCodeServiceImpl)
         )
     )
     .inSingletonScope();

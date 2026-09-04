@@ -1,0 +1,92 @@
+yarn install v1.22.22
+[1/5] Validating package.json...
+[2/5] Resolving packages...
+warning Resolution field "inversify@6.0.2" is incompatible with requested version "inversify@^6.1.3"
+warning Resolution field "node-pty@1.1.0" is incompatible with requested version "node-pty@0.11.0-beta24"
+success Already up-to-date.
+$ lerna run prepare
+(node:85904) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+lerna notice cli v7.4.2
+lerna info versioning independent
+
+ >  Lerna (powered by Nx)   Running target prepare for 2 projects:
+
+    - arduino-ide-extension
+    - electron-app
+
+ 
+
+> arduino-ide-extension:prepare
+
+(node:85904) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+arduino-ide-extension: [2K[1Garduino-ide-extension: [1myarn run v1.22.22[22m
+arduino-ide-extension: [2K[1G[2m$ yarn download-cli && yarn download-fwuploader && yarn download-ls && yarn copy-i18n && yarn download-examples[22m
+arduino-ide-extension: [2K[1Garduino-ide-extension: [2m$ node ./scripts/download-cli.js[22m
+arduino-ide-extension: 📦  Identified released version of the CLI. Downloading version 1.5.0 from 'https://downloads.arduino.cc/arduino-cli/arduino-cli_1.5.0_Windows_64bit.zip'
+arduino-ide-extension: Skipping download because file already exists: C:\Users\spork\dev\arduino-ide-agentic\arduino-ide-extension\src\node\resources\arduino-cli.exe
+arduino-ide-extension: [2K[1Garduino-ide-extension: [2m$ node ./scripts/download-fwuploader.js[22m
+arduino-ide-extension: 📦  Identified released version of the Firmware Uploader. Downloading version 2.4.1 from 'https://downloads.arduino.cc/arduino-fwuploader/arduino-fwuploader_2.4.1_Windows_64bit.zip'
+arduino-ide-extension: Skipping download because file already exists: C:\Users\spork\dev\arduino-ide-agentic\arduino-ide-extension\src\node\resources\arduino-fwuploader.exe
+arduino-ide-extension: [2K[1Garduino-ide-extension: [2m$ node ./scripts/download-ls.js[22m
+arduino-ide-extension: >>> Downloading from 'https://downloads.arduino.cc/arduino-language-server/arduino-language-server_0.7.7_Windows_64bit.zip'...
+arduino-ide-extension: >>> Downloading from 'https://downloads.arduino.cc/tools/clangd_14.0.0_Windows_64bit.tar.bz2'...
+arduino-ide-extension: >>> Downloading from 'https://downloads.arduino.cc/tools/clang-format_14.0.0_Windows_64bit.tar.bz2'...
+arduino-ide-extension: <<< Download succeeded.
+arduino-ide-extension: >>> Decompressing...
+arduino-ide-extension: <<< Decompressing succeeded.
+arduino-ide-extension: Done: C:\Users\spork\dev\arduino-ide-agentic\arduino-ide-extension\src\node\resources\clang-format.exe
+arduino-ide-extension: <<< Download succeeded.
+arduino-ide-extension: >>> Decompressing...
+arduino-ide-extension: <<< Decompressing succeeded.
+arduino-ide-extension: Done: C:\Users\spork\dev\arduino-ide-agentic\arduino-ide-extension\src\node\resources\arduino-language-server.exe
+arduino-ide-extension: <<< Download succeeded.
+arduino-ide-extension: >>> Decompressing...
+arduino-ide-extension: <<< Decompressing succeeded.
+arduino-ide-extension: Done: C:\Users\spork\dev\arduino-ide-agentic\arduino-ide-extension\src\node\resources\clangd.exe
+arduino-ide-extension: [2K[1Garduino-ide-extension: [2m$ ncp ../i18n ./src/node/resources/i18n[22m
+arduino-ide-extension: [2K[1Garduino-ide-extension: [2m$ node ./scripts/download-examples.js[22m
+arduino-ide-extension: Cloning into 'C:\Users\spork\AppData\Local\Temp\arduino-examples-iU4jux'...
+arduino-ide-extension: Switched to a new branch '1.10.3'
+arduino-ide-extension: Generated output to C:\Users\spork\dev\arduino-ide-agentic\arduino-ide-extension\src\node\resources\Examples\examples.json
+arduino-ide-extension: [2K[1GDone in 29.87s.
+
+> electron-app:prepare
+
+electron-app: [2K[1Gelectron-app: [1myarn run v1.22.22[22m
+electron-app: [2K[1G[2m$ theia download:plugins[22m
+electron-app: --- downloading plugins ---
+electron-app: [32m+ vscode-arduino-tools: downloaded successfully [39m
+electron-app: [32m+ vscode-arduino-api: downloaded successfully [39m
+electron-app: [32m+ vscode-builtin-json: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-nl: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-bg: downloaded successfully [39m
+electron-app: [32m+ vscode-builtin-cpp: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-fr: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-hu: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-pt-BR: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-tr: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-uk: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-cs: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-zh-hans: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-ko: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-ja: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-it: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-zh-hant: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-de: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-pl: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-es: downloaded successfully [39m
+electron-app: [32m+ vscode-language-pack-ru: downloaded successfully [39m
+electron-app: [32m+ vscode-builtin-json-language-features: downloaded successfully [39m
+electron-app: [32m+ cortex-debug: downloaded successfully [39m
+electron-app: --- collecting extension-packs ---
+electron-app: --- collecting extension dependencies ---
+electron-app: [2K[1Gelectron-app: Done in 618.32s.
+
+ 
+
+ >  Lerna (powered by Nx)   Successfully ran target prepare for 2 projects
+
+
+Done in 656.04s.
+INSTALL_EXIT=0

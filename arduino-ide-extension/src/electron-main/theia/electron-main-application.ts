@@ -84,7 +84,7 @@ function enableFileLogger() {
     process.env['XDG_CONFIG_HOME'] = xdgConfigHome;
   }
   setupFileLog({
-    appName: 'Arduino IDE',
+    appName: 'Octo Agent',
     maxSize: 10 * 1024 * 1024,
   });
   for (const name of consoleLogFunctionNames) {
@@ -893,7 +893,7 @@ async function updateFrontendApplicationConfigFromPackageJson(
 }
 
 const fallbackFrontendAppConfig: FrontendApplicationConfig = {
-  applicationName: 'Arduino IDE',
+  applicationName: 'Octo Agent',
   defaultTheme: {
     light: 'arduino-theme',
     dark: 'arduino-theme-dark',

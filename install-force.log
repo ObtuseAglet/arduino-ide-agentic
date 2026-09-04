@@ -1,0 +1,30 @@
+electron-app: - vscode-arduino-tools: already downloaded - skipping
+electron-app: - cortex-debug: already downloaded - skipping
+electron-app: - vscode-builtin-json-language-features: already downloaded - skipping
+electron-app: - vscode-language-pack-cs: already downloaded - skipping
+electron-app: - vscode-language-pack-bg: already downloaded - skipping
+electron-app: - vscode-language-pack-hu: already downloaded - skipping
+electron-app: - vscode-language-pack-fr: already downloaded - skipping
+electron-app: - vscode-language-pack-de: already downloaded - skipping
+electron-app: - vscode-language-pack-es: already downloaded - skipping
+electron-app: - vscode-language-pack-it: already downloaded - skipping
+electron-app: - vscode-language-pack-ja: already downloaded - skipping
+electron-app: - vscode-language-pack-nl: already downloaded - skipping
+electron-app: - vscode-language-pack-ko: already downloaded - skipping
+electron-app: - vscode-language-pack-pl: already downloaded - skipping
+electron-app: - vscode-language-pack-ru: already downloaded - skipping
+electron-app: - vscode-language-pack-zh-hans: already downloaded - skipping
+electron-app: - vscode-language-pack-pt-BR: already downloaded - skipping
+electron-app: - vscode-language-pack-tr: already downloaded - skipping
+electron-app: - vscode-language-pack-uk: already downloaded - skipping
+electron-app: - vscode-language-pack-zh-hant: already downloaded - skipping
+electron-app: --- collecting extension-packs ---
+electron-app: --- collecting extension dependencies ---
+electron-app: [2K[1GDone in 23.79s.
+
+ 
+
+ >  Lerna (powered by Nx)   Successfully ran target prepare for 2 projects
+
+
+Done in 144.37s.

@@ -351,6 +351,12 @@ import { StylingParticipant } from '@theia/core/lib/browser/styling-service';
 import { MonacoEditorMenuContribution } from './theia/monaco/monaco-menu';
 import { MonacoEditorMenuContribution as TheiaMonacoEditorMenuContribution } from '@theia/monaco/lib/browser/monaco-menu';
 import { UpdateArduinoState } from './contributions/update-arduino-state';
+import { ClaudeCode } from './claude-code/claude-code-contribution';
+import { ClaudeCodeContext } from './claude-code/claude-code-context';
+import {
+  ClaudeCodeService,
+  ClaudeCodeServicePath,
+} from '../common/protocol/claude-code-service';
 import { TerminalFrontendContribution } from './theia/terminal/terminal-frontend-contribution';
 import { TerminalFrontendContribution as TheiaTerminalFrontendContribution } from '@theia/terminal/lib/browser/terminal-frontend-contribution';
 import { SelectionService } from '@theia/core/lib/common/selection-service';
@@ -664,6 +670,14 @@ export default new ContainerModule((bind, unbind, isBound, rebind) => {
     )
     .inSingletonScope();
 
+  // Claude Code: backend CLI probe proxy + the frontend Arduino-context helper.
+  bind(ClaudeCodeService)
+    .toDynamicValue(({ container }) =>
+      WebSocketConnectionProvider.createProxy(container, ClaudeCodeServicePath)
+    )
+    .inSingletonScope();
+  bind(ClaudeCodeContext).toSelf().inSingletonScope();
+
   bind(ArduinoFirmwareUploader)
     .toDynamicValue((context) =>
       WebSocketConnectionProvider.createProxy(
@@ -757,6 +771,7 @@ export default new ContainerModule((bind, unbind, isBound, rebind) => {
   Contribution.configure(bind, UpdateArduinoState);
   Contribution.configure(bind, BoardsDataMenuUpdater);
   Contribution.configure(bind, AutoSelectProgrammer);
+  Contribution.configure(bind, ClaudeCode);
 
   bind(CompileSummaryProvider).toService(VerifySketch);
 

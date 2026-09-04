@@ -1,14 +1,14 @@
-<img src="https://content.arduino.cc/website/Arduino_logo_teal.svg" height="100" align="right" />
+<p align="center">
+  <img src="newassets/octoagentsplash.png" alt="Octo Agent" width="520" />
+</p>
 
-# Arduino IDE 2.x
+# Octo Agent
 
-[![Build status](https://github.com/arduino/arduino-ide/actions/workflows/build.yml/badge.svg)](https://github.com/arduino/arduino-ide/actions/workflows/build.yml)
-[![Check JavaScript status](https://github.com/arduino/arduino-ide/actions/workflows/check-javascript.yml/badge.svg)](https://github.com/arduino/arduino-ide/actions/workflows/check-javascript.yml)
-[![Test JavaScript status](https://github.com/arduino/arduino-ide/actions/workflows/test-javascript.yml/badge.svg)](https://github.com/arduino/arduino-ide/actions/workflows/test-javascript.yml)
+> **Octo Agent is an independent, community fork of the [Arduino IDE](https://github.com/arduino/arduino-ide).** It is **not affiliated with, sponsored by, or endorsed by Arduino s.r.l.** "Arduino" is a trademark of Arduino s.r.l., used here only to describe the upstream project this fork is derived from. Octo Agent adds an integrated agentic development workflow (Claude Code) on top of the upstream IDE.
 
-This repository contains the source code of the Arduino IDE 2.x. If you're looking for the old IDE, go to the [repository of the 1.x version](https://github.com/arduino/Arduino).
+This repository is a fork of the Arduino IDE 2.x source. If you're looking for the official, Arduino-maintained IDE, go to the [upstream repository](https://github.com/arduino/arduino-ide).
 
-The Arduino IDE 2.x is a major rewrite, sharing no code with the IDE 1.x. It is based on the [Theia IDE](https://theia-ide.org/) framework and built with [Electron](https://www.electronjs.org/). The backend operations such as compilation and uploading are offloaded to an [arduino-cli](https://github.com/arduino/arduino-cli) instance running in daemon mode. This new IDE was developed with the goal of preserving the same interface and user experience of the previous major version in order to provide a frictionless upgrade.
+Like its upstream, the Arduino IDE 2.x is a major rewrite, sharing no code with the IDE 1.x. It is based on the [Theia IDE](https://theia-ide.org/) framework and built with [Electron](https://www.electronjs.org/). The backend operations such as compilation and uploading are offloaded to an [arduino-cli](https://github.com/arduino/arduino-cli) instance running in daemon mode. This new IDE was developed with the goal of preserving the same interface and user experience of the previous major version in order to provide a frictionless upgrade.
 
 ![](static/screenshot.png)
 
@@ -52,4 +52,6 @@ This open source code was written by the Arduino team and is maintained on a dai
 
 ## License
 
-The code contained in this repository and the executable distributions are licensed under the terms of the GNU AGPLv3. The executable distributions contain third-party code licensed under other compatible licenses such as GPLv2, MIT and BSD-3. If you have questions about licensing please contact us at [license@arduino.cc](mailto:license@arduino.cc).
+The code contained in this repository and the executable distributions are licensed under the terms of the GNU AGPLv3. The executable distributions contain third-party code licensed under other compatible licenses such as GPLv2, MIT and BSD-3.
+
+Octo Agent is a derivative work of the Arduino IDE and remains licensed under the GNU AGPLv3, as required. The original copyright remains with Arduino s.r.l. and/or its affiliated companies; this fork's modifications are likewise released under the AGPLv3. For licensing questions about the upstream Arduino IDE, contact Arduino at [license@arduino.cc](mailto:license@arduino.cc). The Octo Agent name and logo are not covered by the AGPL and are not Arduino trademarks.

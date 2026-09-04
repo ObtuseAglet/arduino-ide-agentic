@@ -1,0 +1,120 @@
+yarn run v1.22.22
+$ lerna run build
+(node:85904) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+lerna notice cli v7.4.2
+lerna info versioning independent
+
+ >  Lerna (powered by Nx)   Running target build for 2 projects:
+
+    - arduino-ide-extension
+    - electron-app
+
+ 
+
+> arduino-ide-extension:build
+
+(node:85904) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+arduino-ide-extension: [2K[1Garduino-ide-extension: [2m$ rimraf lib[22m
+arduino-ide-extension: [2K[1G[2m$ tsc[22m
+arduino-ide-extension: [2K[1G[2m$ ncp ./src/node/cli-protocol/ ./lib/node/cli-protocol/[22m
+
+> electron-app:build
+
+electron-app: [2K[1Gelectron-app: [2m$ rimraf lib[22m
+electron-app: [2K[1G[2m$ theia build[22m
+electron-app: Found cached ffmpeg library.
+electron-app: Hashes are equal, not replacing the ffmpeg library.
+electron-app: "C:\Users\spork\dev\arduino-ide-agentic\node_modules\electron\dist\ffmpeg.dll" does not contain proprietary codecs (13 found).
+electron-app: assets by status 237 KiB [1m[32m[cached][39m[22m 2 assets
+electron-app: assets by info 1.98 MiB [1m[32m[immutable][39m[22m 18 assets
+electron-app: assets by path [1m[32m*.js[39m[22m 16.4 MiB
+electron-app:   assets by status [1m[33m16.3 MiB[39m[22m [1m[33m[big][39m[22m 3 assets
+electron-app:   asset [1m[32m874.js[39m[22m 108 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (id hint: vendors) 2 related assets
+electron-app:   asset [1m[32m301.js[39m[22m 3.14 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m 1 related asset
+electron-app:   asset [1m[32m740.js[39m[22m 2.19 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m 1 related asset
+electron-app: assets by path [1m[32m../webview/pre/[39m[22m 16.3 KiB
+electron-app:   assets by path [1m[32m../webview/pre/*.js[39m[22m 15.6 KiB 3 assets
+electron-app:   assets by path [1m[32m../webview/pre/*.html[39m[22m 726 bytes
+electron-app:     asset [1m[32m../webview/pre/index.html[39m[22m 480 bytes [1m[32m[emitted][39m[22m [from: ../node_modules/@theia/plugin-ext/src/main/browser/webview/pre/index.html] [1m[32m[copied][39m[22m
+electron-app:     asset [1m[32m../webview/pre/fake.html[39m[22m 246 bytes [1m[32m[emitted][39m[22m [from: ../node_modules/@theia/plugin-ext/src/main/browser/webview/pre/fake.html] [1m[32m[copied][39m[22m
+electron-app: asset [1m[32msecondary-window.html[39m[22m 531 bytes [1m[32m[emitted][39m[22m [from: src-gen/frontend/secondary-window.html] [1m[32m[copied][39m[22m
+electron-app: asset [1m[32mcontext/plugin-vscode-init-fe.js[39m[22m 398 bytes [1m[32m[emitted][39m[22m [from: ../node_modules/@theia/plugin-ext-vscode/lib/node/context/plugin-vscode-init-fe.js] [1m[32m[copied][39m[22m [1m[32m[minimized][39m[22m
+electron-app: 3717 modules
+electron-app:   
+electron-app: [1m[33mWARNING[39m[22m in [1masset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+electron-app: This can impact web performance.
+electron-app: Assets: 
+electron-app:   bundle.js (13.6 MiB)
+electron-app:   c1e38fd9e0e74ba58f7a.svg?v=4.7.0 (434 KiB)
+electron-app:   cd3c4b260f85aac6f600.wasm (460 KiB)
+electron-app:   editor.worker.js (320 KiB)
+electron-app:   998.js (2.44 MiB)[39m[22m
+electron-app: [1m[33mWARNING[39m[22m in [1mentrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+electron-app: Entrypoints:
+electron-app:   bundle (13.6 MiB)
+electron-app:       bundle.js
+electron-app:   editor.worker (320 KiB)
+electron-app:       editor.worker.js
+electron-app: [39m[22m
+electron-app: webpack 5.98.0 compiled with [1m[33m2 warnings[39m[22m in 189709 ms
+electron-app: asset [1m[32mpreload.js[39m[22m 26.6 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: preload) 1 related asset
+electron-app: modules by path [1m../node_modules/[39m[22m 69 KiB
+electron-app:   modules by path [1m../node_modules/@theia/[39m[22m 52.8 KiB 13 modules
+electron-app:   modules by path [1m../node_modules/@phosphor/coreutils/lib/*.js[39m[22m 16.2 KiB
+electron-app:     [1m../node_modules/@phosphor/coreutils/lib/index.js[39m[22m 703 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app:     [1m../node_modules/@phosphor/coreutils/lib/json.js[39m[22m 4.96 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app:     + 5 modules
+electron-app: modules by path [1m../arduino-ide-extension/lib/[39m[22m 6.93 KiB
+electron-app:   [1m../arduino-ide-extension/lib/electron-browser/preload.js[39m[22m 4.17 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app:   [1m../arduino-ide-extension/lib/electron-common/electron-arduino.js[39m[22m 1.9 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app:   [1m../arduino-ide-extension/lib/electron-common/startup-task.js[39m[22m 885 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app: [1m./src-gen/frontend/preload.js[39m[22m 220 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app: [1mexternal "electron"[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app: [1mexternal "crypto"[39m[22m 42 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app:   
+electron-app: webpack 5.98.0 compiled [1m[32msuccessfully[39m[22m in 5427 ms
+electron-app: assets by path [1m[32mresources/Examples/[39m[22m 4.92 MiB 231 assets
+electron-app: assets by path [1m[32mresources/arduino-serial-plotter-webapp/[39m[22m 6.46 MiB 25 assets
+electron-app: assets by path [1m[32m*.js[39m[22m 20.7 MiB
+electron-app:   asset [1m[32mmain.js[39m[22m 7.28 MiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: main) 1 related asset
+electron-app:   + 7 assets
+electron-app: assets by path [1m[32mresources/*.exe[39m[22m 103 MiB
+electron-app:   asset [1m[32mresources/arduino-cli.exe[39m[22m 36 MiB [1m[32m[emitted][39m[22m [from: ../arduino-ide-extension/src/node/resources/arduino-cli.exe] [1m[32m[copied][39m[22m
+electron-app:   asset [1m[32mresources/clangd.exe[39m[22m 26.2 MiB [1m[32m[emitted][39m[22m [from: ../arduino-ide-extension/src/node/resources/clangd.exe] [1m[32m[copied][39m[22m
+electron-app:   + 3 assets
+electron-app: assets by path [1m[32mnative/*.node[39m[22m 1.17 MiB
+electron-app:   asset [1m[32mnative/watcher.node[39m[22m 506 KiB [1m[32m[emitted][39m[22m (auxiliary name: main, parcel-watcher)
+electron-app:   asset [1m[32mnative/drivelist.node[39m[22m 227 KiB [1m[32m[emitted][39m[22m (auxiliary name: main)
+electron-app:   + 3 assets
+electron-app: asset [1m[32mresources/LICENSE.txt[39m[22m 33.2 KiB [1m[32m[emitted][39m[22m [from: ../arduino-ide-extension/src/node/resources/LICENSE.txt] [1m[32m[copied][39m[22m
+electron-app: asset [1m[32mworker/conoutSocketWorker.js[39m[22m 690 bytes [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: worker/conoutSocketWorker)
+electron-app: orphan modules 195 KiB [1m[33m[orphan][39m[22m 85 modules
+electron-app: runtime modules 8.12 KiB 38 modules
+electron-app: modules by path [1m../node_modules/[39m[22m 14.4 MiB
+electron-app:   javascript modules 12.2 MiB 2117 modules
+electron-app:   json modules 2.18 MiB 57 modules
+electron-app: modules by path [1m../arduino-ide-extension/[39m[22m 2.83 MiB
+electron-app:   modules by path [1m../arduino-ide-extension/lib/[39m[22m 2.58 MiB 123 modules
+electron-app:   modules by path [1m../arduino-ide-extension/node_modules/[39m[22m 254 KiB 45 modules
+electron-app:   [1m../arduino-ide-extension/package.json[39m[22m 4.44 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app: modules by path [1m./[39m[22m 12 KiB
+electron-app:   modules by path [1m./src-gen/backend/*.js[39m[22m 11.1 KiB 3 modules
+electron-app:   modules by path [1m./lib/backend/native-webpack-plugin/*.js[39m[22m 341 bytes 2 modules
+electron-app:   [1m./arduino-ide-backend-main.js[39m[22m 572 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+electron-app: + 44 modules
+electron-app: [1m[33mWARNING[39m[22m in [1m../arduino-ide-extension/lib/electron-main/theia/electron-main-application.js[39m[22m [1m[32m469:34-470:41[39m[22m
+electron-app: [1mCritical dependency: the request of a dependency is an expression[39m[22m
+electron-app:  @ ../arduino-ide-extension/lib/electron-main/arduino-electron-main-module.js 15:36-80
+electron-app:  @ ./src-gen/backend/electron-main.js 94:19-98
+electron-app: 1 warning has detailed information that is not shown.
+electron-app: Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+electron-app: webpack 5.98.0 compiled with [1m[33m1 warning[39m[22m in 79706 ms
+
+ 
+
+ >  Lerna (powered by Nx)   Successfully ran target build for 2 projects
+
+
+Done in 296.14s.
+BUILD_EXIT=0
